@@ -8,11 +8,11 @@
       <ion-col>
         <ion-item>
           <ion-label floating>Email</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="login.email"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Password</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input type="password" [(ngModel)]="login.password"></ion-input>
         </ion-item>
         <br/><br/>
         <button ion-button block  outline color="light" (click)="doLogin()">Login</button>

@@ -26,6 +26,7 @@ export class LoginPage {
     let loading = this.loadingCtrl.create({content: "Please wait.."});
     loading.present();
     this.accountService.prosesLogin(this.login).subscribe(output =>{
+      console.log(output);
       if(output.result == 1){
         //token disimpan di storage
         this.storage.set("token",output.token);
