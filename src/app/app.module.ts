@@ -15,6 +15,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { HttpModule } from '@angular/http';
 import { AccountService } from '../services/account-service';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AccountService } from '../services/account-service';
   imports: [
   HttpModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

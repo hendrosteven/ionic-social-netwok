@@ -3,6 +3,7 @@ import { Http, Headers, RequestOptions } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { Account } from '../classes/account';
 import 'rxjs/Rx';
+import { Login } from "../classes/login";
 
 @Injectable()
 export class AccountService{
@@ -19,6 +20,12 @@ export class AccountService{
 
     register(account: Account){
         return this.http.post(this.url+'/register',account,this.options)
+        .map(res => res.json())
+        .catch(this.handleError);
+    }
+
+    prosesLogin(login: Login){
+        return this.http.post(this.url+'/login',login,this.options)
         .map(res => res.json())
         .catch(this.handleError);
     }
