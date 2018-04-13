@@ -5,6 +5,11 @@
 </ion-header>
 
 <ion-content style="background-color: #E3E3E3">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
   <ion-card *ngFor="let posting of postings" style="width: 100%;margin-top:0px; margin-right: 0px;margin-left: 0px;box-shadow: none">
     <ion-item>
       <ion-avatar item-start>
@@ -21,12 +26,16 @@
     </ion-card-content>
     <hr/>
     <ion-row>
-      <ion-col text-center><ion-icon name="thumbs-up"></ion-icon> Like</ion-col>
-      <ion-col text-center><ion-icon name="chatboxes"></ion-icon> Comment</ion-col>
+      <ion-col text-center>
+        <ion-icon name="thumbs-up"></ion-icon> Like</ion-col>
+      <ion-col text-center>
+        <ion-icon name="chatboxes"></ion-icon> Comment</ion-col>
     </ion-row>
   </ion-card>
 
   <ion-fab right bottom>
-      <button ion-fab color="primary" (click)="takePicture()"><ion-icon name="camera"></ion-icon></button>
-    </ion-fab>
+    <button ion-fab color="primary" (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

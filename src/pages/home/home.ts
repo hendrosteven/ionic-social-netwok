@@ -40,6 +40,13 @@ export class HomePage {
     });
   }
 
+  doRefresh(refresher){
+    this.loadPosting();
+    setTimeout(() => {
+      refresher.complete();
+    }, 2000);
+  }
+
   takePicture(){
     const options: CameraOptions = {
       quality: 100,
