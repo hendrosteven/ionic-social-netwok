@@ -44,7 +44,7 @@ export class HomePage {
     this.loadPosting();
     setTimeout(() => {
       refresher.complete();
-    }, 2000);
+    }, 3000);
   }
 
   takePicture(){

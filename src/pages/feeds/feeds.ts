@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { LoginPage } from '../login/login';
+import { AccountService } from '../../services/account-service';
+import { Account } from '../../classes/account';
+import { QrcodePage } from '../qrcode/qrcode';
 
-/**
- * Generated class for the FeedsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +14,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FeedsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private storage: Storage, private app: App, private accountService: AccountService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FeedsPage');
+
+  logout(){
+    this.storage.remove('token').then(()=>{
+      this.app.getRootNav().setRoot(LoginPage);
+    });
+  }
+
+  createQrCode(){
+    this.storage.get('token').then(val=>{
+      this.accountService.loadAccount(val).subscribe((account: Account) =>{
+        this.navCtrl.push(QrcodePage, account.id.toString());
+      })
+    });
   }
 
 }

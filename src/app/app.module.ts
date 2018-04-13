@@ -19,6 +19,8 @@ import { IonicStorageModule } from '@ionic/storage';
 import { PostingPage } from '../pages/posting/posting';
 import { Camera } from '@ionic-native/camera';
 import { PostingService } from '../services/posting-service';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { QrcodePage } from '../pages/qrcode/qrcode';
 
 @NgModule({
   declarations: [
@@ -31,13 +33,15 @@ import { PostingService } from '../services/posting-service';
     FeedsPage,
     LoginPage,
     RegisterPage,
-    PostingPage
+    PostingPage,
+    QrcodePage
   ],
   imports: [
-  HttpModule,
+HttpModule,
     BrowserModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp,{scrollAssist:false,autoFocusAssist:false})
+    IonicModule.forRoot(MyApp,{scrollAssist:false,autoFocusAssist:false}),
+    NgxQRCodeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,7 +54,8 @@ import { PostingService } from '../services/posting-service';
     FeedsPage,
     LoginPage,
     RegisterPage,
-    PostingPage
+    PostingPage,
+    QrcodePage
   ],
   providers: [
     StatusBar,

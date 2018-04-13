@@ -18,6 +18,17 @@ export class AccountService{
         this.options = new RequestOptions({headers: this.headers});
     }
 
+    loadAccount(token: string){
+        this.headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization' : 'Barier '+ token
+        });
+        this.options = new RequestOptions({headers : this.headers});
+        return this.http.get(this.url,this.options)
+        .map(res => res.json())
+        .catch(this.handleError);
+    }
+
     register(account: Account){
         return this.http.post(this.url+'/register',account,this.options)
         .map(res => res.json())

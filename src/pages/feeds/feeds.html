@@ -1,13 +1,31 @@
-
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>feeds</ion-title>
+    <ion-title>Settings</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider color="light">Shortcut</ion-item-divider>
+      <ion-item>
+        <ion-icon name="contact" item-start></ion-icon>
+        My Profile
+      </ion-item>
+      <ion-item (click)="createQrCode()">
+        <ion-icon name="barcode" item-start></ion-icon>
+        My QRCode
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
 
+  <ion-item-group>
+    <ion-item-divider color="light"></ion-item-divider>
+    <ion-item (click)="logout()">
+      <ion-icon name="exit" item-start></ion-icon>Logout
+    </ion-item>
+  </ion-item-group>
 </ion-content>
