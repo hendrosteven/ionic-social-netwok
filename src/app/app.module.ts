@@ -16,6 +16,8 @@ import { RegisterPage } from '../pages/register/register';
 import { HttpModule } from '@angular/http';
 import { AccountService } from '../services/account-service';
 import { IonicStorageModule } from '@ionic/storage';
+import { PostingPage } from '../pages/posting/posting';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { IonicStorageModule } from '@ionic/storage';
     AccountPage,
     FeedsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    PostingPage
   ],
   imports: [
   HttpModule,
@@ -45,13 +48,15 @@ import { IonicStorageModule } from '@ionic/storage';
     AccountPage,
     FeedsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    PostingPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AccountService
+    AccountService,
+    Camera
   ]
 })
 export class AppModule {}

@@ -10,7 +10,7 @@ export class AccountService{
 
     headers: any;
     options: any;
-    url: string = 'http://ionic.kelaskoding.com'
+    url: string = 'https://ion-social.herokuapp.com'
 
     constructor(private http: Http){
         this.headers = new Headers({'Content-Type' : 'application/json',
