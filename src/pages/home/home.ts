@@ -29,8 +29,8 @@ export class HomePage {
       .getPicture(options)
       .then((imageData) => {
          let base64String = 'data:image/jpeg;base64,' + imageData;
-         let modalPosting = this.modalCtrl.create(PostingPage,base64String);
-         modalPosting.present();
+         let modalPosting = this.modalCtrl.create(PostingPage,{picture: base64String});
+         modalPosting.present()
       }, (err) => {
         console.log(err);
       });

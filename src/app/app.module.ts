@@ -18,6 +18,7 @@ import { AccountService } from '../services/account-service';
 import { IonicStorageModule } from '@ionic/storage';
 import { PostingPage } from '../pages/posting/posting';
 import { Camera } from '@ionic-native/camera';
+import { PostingService } from '../services/posting-service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { Camera } from '@ionic-native/camera';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AccountService,
-    Camera
+    Camera,
+    PostingService
   ]
 })
 export class AppModule {}
