@@ -42,7 +42,7 @@ export class PostingPage {
         this.postingSerice.savePosting(this.posting,val).subscribe(output => {
           console.log(output);
           loading.dismiss();
-          this.viewCtrl.dismiss();
+          this.viewCtrl.dismiss(output[0]);
         },error=>{
           loading.dismiss();
           console.log(error);

@@ -5,21 +5,18 @@
 </ion-header>
 
 <ion-content style="background-color: #E3E3E3">
-  <ion-card style="width: 100%;margin-top:0px; margin-right: 0px;margin-left: 0px;box-shadow: none">
+  <ion-card *ngFor="let posting of postings" style="width: 100%;margin-top:0px; margin-right: 0px;margin-left: 0px;box-shadow: none">
     <ion-item>
       <ion-avatar item-start>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa-1vn3BvtBnjFHjzzdrkeJCQyscwiMYnOSLNxCBH_gEFm5jjD" />
+        <img src="" />
       </ion-avatar>
-      <h2 style="font-weight: bold">Nama Pengguna</h2>
-      <p>Senin at 16.40</p>
+      <h2 style="font-weight: bold">{{ posting.account_name }}</h2>
+      <p>{{ posting.post_date }}</p>
     </ion-item>
-    <img src="https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png" />
+    <img [src]="dom.bypassSecurityTrustUrl(posting.photo)" />
     <ion-card-content>
-      <ion-card-title>
-        Nine Inch Nails Live
-      </ion-card-title>
       <p>
-        The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+        {{ posting.description }}
       </p>
     </ion-card-content>
     <hr/>
@@ -27,29 +24,6 @@
       <ion-col text-center><ion-icon name="thumbs-up"></ion-icon> Like</ion-col>
       <ion-col text-center><ion-icon name="chatboxes"></ion-icon> Comment</ion-col>
     </ion-row>
-  </ion-card>
-  <ion-card style="width: 100%;margin-top:0px; margin-right: 0px;margin-left: 0px;box-shadow: none">
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa-1vn3BvtBnjFHjzzdrkeJCQyscwiMYnOSLNxCBH_gEFm5jjD" />
-      </ion-avatar>
-      <h2 style="font-weight: bold">Nama Pengguna</h2>
-      <p>Senin at 16.40</p>
-    </ion-item>
-    <img src="https://ionicframework.com/dist/preview-app/www/assets/img/badu-live.png" />
-    <ion-card-content>
-      <ion-card-title>
-        Nine Inch Nails Live
-      </ion-card-title>
-      <p>
-        The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
-      </p>
-    </ion-card-content>
-    <hr/>
-    <ion-row>
-        <ion-col text-center><ion-icon name="thumbs-up"></ion-icon> Like</ion-col>
-        <ion-col text-center><ion-icon name="chatboxes"></ion-icon> Comment</ion-col>
-      </ion-row>
   </ion-card>
 
   <ion-fab right bottom>

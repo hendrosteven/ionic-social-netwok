@@ -3,5 +3,6 @@ export class Posting{
     post_date: string;
     photo: string;
     description: string;
-    account: string;
+    account_name: string;
+    taccount_id: number;
 }

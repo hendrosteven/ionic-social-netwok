@@ -26,6 +26,22 @@ export class PostingService{
         .catch(this.handleError);
     }
 
+    findAllPost(token: string){
+        this.headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization' : 'Barier '+ token
+        });
+        this.options = new RequestOptions({headers : this.headers});
+
+        return this.http.get(this.url + '/timeline', this.options)
+        .map(res => res.json())
+        .catch(this.handleError);
+    }
+
+    findMyPost(){
+
+    }
+
     handleError(error){
         return Observable.throw(error.json().error || 'Servier error');
     }
