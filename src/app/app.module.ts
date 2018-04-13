@@ -21,6 +21,8 @@ import { Camera } from '@ionic-native/camera';
 import { PostingService } from '../services/posting-service';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { QrcodePage } from '../pages/qrcode/qrcode';
+import { FriendService } from '../services/friend-service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ HttpModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AccountService,
     Camera,
-    PostingService
+    PostingService,
+    FriendService,
+    BarcodeScanner
   ]
 })
 export class AppModule {}

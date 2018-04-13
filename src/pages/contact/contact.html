@@ -1,35 +1,24 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Contact
+      Friends 
     </ion-title>
+    <ion-buttons right>
+        <button ion-button (click)="scanBarcode()">
+          <ion-icon name="qr-scanner"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item>
+    <ion-item *ngFor="let friend of friends">
       <ion-thumbnail item-start>
-        <img src="img/thumbnail-totoro.png">
+        <img src="">
       </ion-thumbnail>
-      <h2>My Neighbor Totoro</h2>
-      <p>Hayao Miyazaki • 1988</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="img/thumbnail-totoro.png">
-      </ion-thumbnail>
-      <h2>My Neighbor Totoro</h2>
-      <p>Hayao Miyazaki • 1988</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="img/thumbnail-totoro.png">
-      </ion-thumbnail>
-      <h2>My Neighbor Totoro</h2>
-      <p>Hayao Miyazaki • 1988</p>
+      <h2>{{ friend.friend_fullname }}</h2>
+      <p>{{ friend.friend_email }}</p>
       <button ion-button clear item-end>View</button>
     </ion-item>
   </ion-list>
