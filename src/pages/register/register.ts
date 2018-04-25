@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams, LoadingController, AlertController
 import { Account } from '../../classes/account';
 import { AccountService } from '../../services/account-service';
 
-
-@IonicPage()
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',

@@ -5,8 +5,6 @@ import { Posting } from '../../classes/posting';
 import { PostingService } from '../../services/posting-service';
 import { Storage } from '@ionic/storage';
 
-
-@IonicPage()
 @Component({
   selector: 'page-posting',
   templateUrl: 'posting.html',

@@ -6,8 +6,6 @@ import { AccountService } from '../../services/account-service';
 import { Account } from '../../classes/account';
 import { QrcodePage } from '../qrcode/qrcode';
 
-
-@IonicPage()
 @Component({
   selector: 'page-feeds',
   templateUrl: 'feeds.html',

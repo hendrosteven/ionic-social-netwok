@@ -6,7 +6,6 @@ import { Login } from '../../classes/login';
 import { AccountService } from '../../services/account-service';
 import { Storage } from '@ionic/storage';
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
